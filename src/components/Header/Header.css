@@ -1,0 +1,14 @@
+.navbar a {
+    text-decoration: none;
+}
+
+.nav-items a {
+    color: white;
+    text-decoration: none;
+    margin-right: 32px;
+}
+
+.nav-items a:hover {
+    text-decoration: underline;
+    color: gainsboro;
+}
