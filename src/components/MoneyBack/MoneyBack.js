@@ -1,9 +1,10 @@
 import React from 'react';
 import moneyBack from '../../images/moneyBack.png'
+import './MoneyBack.css'
 
 const MoneyBack = () => {
     return (
-        <div className='d-flex m-5 py-5'>
+        <div className='d-flex mt-5 px-4 py-5 money-back'>
             <div className='w-50'>
                 <img className='w-75' src={moneyBack} alt="" />
             </div>
