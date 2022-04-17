@@ -2,13 +2,22 @@
     text-decoration: none;
 }
 
-.nav-items a {
+.sign-out {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items a,
+.sign-out {
     color: white;
     text-decoration: none;
     margin-left: 32px;
 }
 
-.nav-items a:hover {
+
+.nav-items a:hover,
+.sign-out:hover {
     text-decoration: underline;
-    color: gainsboro;
+    color: orange;
 }

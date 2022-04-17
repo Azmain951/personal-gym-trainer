@@ -44,7 +44,7 @@ const Register = () => {
     }
 
     return (
-        <div className='container w-50 border mt-5 rounded pb-3'>
+        <div className='container w-50 border my-5 rounded pb-3'>
             <h2 className='text-center mt-4'>Register</h2>
             <Form onSubmit={handleRegister} className='w-75 mx-auto'>
                 <Form.Group className="mb-3" controlId="formBasicName">
@@ -65,7 +65,7 @@ const Register = () => {
                     <Form.Check onClick={() => setAgreed(!agreed)} className={`${agreed ? 'text-success' : 'text-danger'}`} type="checkbox" label="Accept Personal Gym Trainer Terms and Conditions" />
                 </Form.Group>
                 {errorMessage}
-                <input className='btn btn-primary border-0' type="submit" value="Register" disabled={!agreed} />
+                <input className='btn btn-dark border-0' type="submit" value="Register" disabled={!agreed} />
             </Form>
             <p className='mt-2 w-75 mx-auto'>Already have an account? <Link to='/login'>Please Login</Link></p>
             <SocialLogin></SocialLogin>

@@ -43,7 +43,7 @@ const Login = () => {
 
     if (user) {
         navigate(from, { replace: true });
-        toast.success("Successfully logged in")
+        toast.success("Successfully logged in");
     }
 
     if (loading || sending) {
@@ -55,10 +55,7 @@ const Login = () => {
     }
 
     return (
-        <div className='container w-50 border mt-5 rounded pb-3'>
-            <div>
-                <Toaster />
-            </div>
+        <div className='container w-50 border my-5 rounded pb-3'>
             <h2 className='text-center mt-4'>Login</h2>
             <Form onSubmit={handleLogin} className='w-75 mx-auto'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -71,11 +68,11 @@ const Login = () => {
                     <Form.Control ref={passwordRef} type="password" name='password' placeholder="Password" required />
                 </Form.Group>
                 {errorMessage}
-                <Button variant="primary" type="submit">
+                <Button variant="dark" type="submit">
                     Login
                 </Button>
             </Form>
-            <p className='mt-2 w-75 mx-auto'>Forget Password? <button onClick={resetPassword} className='btn btn-link text-secondary p-0 m-0'>Reset Password</button></p>
+            <p className='mt-2 w-75 mx-auto'>Forget Password? <button onClick={resetPassword} className='btn btn-link text-danger p-0 m-0'>Reset Password</button></p>
             <p className='mt-2 w-75 mx-auto'>New to Personal Gym Trainer? <Link to='/register'>Join Here</Link></p>
             <SocialLogin></SocialLogin>
         </div>

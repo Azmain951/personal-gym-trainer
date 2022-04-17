@@ -5,9 +5,9 @@ const Footer = () => {
     const date = new Date();
 
     return (
-        <div className='d-flex justify-content-between px-5 py-4 bg-dark text-white'>
-            <p className='text-uppercase mb-0'>&copy; copyright {date.getFullYear()}.all rights reserved.</p>
-            <p className='mb-0'>Website Designed by AFRIDI AZMAIN</p>
+        <div className='bottom-0 d-flex justify-content-between px-5 py-4 bg-dark text-white'>
+            <p className='text-uppercase mb-0'>&copy; copyright <span className='text-primary'>{date.getFullYear()}</span> . all rights reserved.</p>
+            <p className='mb-0'>Website Designed by <span className='text-primary'>AFRIDI AZMAIN</span></p>
         </div>
     );
 };

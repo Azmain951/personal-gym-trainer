@@ -21,7 +21,7 @@ const Header = () => {
                 <Link to='Blogs'>Blogs</Link>
                 <Link to='About'>About</Link>
                 {user ?
-                    <button onClick={handleSignOut} className='btn btn-link'>Sign Out</button>
+                    <button onClick={handleSignOut} className='sign-out bg-dark'>Sign Out</button>
                     : <Link to='login'>Login</Link>}
             </div>
         </nav >

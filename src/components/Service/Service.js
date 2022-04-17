@@ -1,5 +1,8 @@
+import { faCircleCheck, faIdBadge } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './Service.css'
 
 const Service = ({ service }) => {
 
@@ -18,17 +21,17 @@ const Service = ({ service }) => {
                 <div className="card-body">
                     <h4 className="card-title text-capitalize">{name}</h4>
                     <hr />
-                    <h3>From ${pricing}/Month</h3>
+                    <h3>From<span className='text-primary'> ${pricing}</span>/Month</h3>
                     <p className="card-text">{description.slice(0, 200)}</p>
                     <hr />
-                    <ul>
+                    <div className='text-start'>
                         {
-                            perks.map(perk => <li>{perk}</li>)
+                            perks.map(perk => <p><FontAwesomeIcon className='me-2 text-success' icon={faCircleCheck}></FontAwesomeIcon>{perk}</p>)
                         }
-                    </ul>
+                    </div>
                 </div>
                 <div className="card-footer p-0">
-                    <button onClick={handleEnroll} className='btn btn-secondary w-100'>Enroll Now</button>
+                    <button onClick={handleEnroll} className='enroll btn btn-dark w-100'>Enroll Now</button>
                 </div>
             </div>
         </div>

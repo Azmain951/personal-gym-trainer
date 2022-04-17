@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -32,8 +33,8 @@ const SocialLogin = () => {
             {errorMessage}
 
             <div className='w-75 mx-auto mb-3 d-flex justify-content-center gap-4'>
-                <button onClick={() => signInWithGoogle()} className='w-75 btn btn-secondary'>Google Sign in</button>
-                <button className='w-75 btn btn-secondary'>Github Sign in</button>
+                <button onClick={() => signInWithGoogle()} className='w-75 btn btn-dark'>Google Sign in</button>
+                <button className='w-75 btn btn-dark'>Github Sign in</button>
             </div>
         </div >
     );

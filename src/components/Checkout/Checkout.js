@@ -61,11 +61,7 @@ const Checkout = () => {
                     </Form.Group>
                 </Row>
 
-                <Form.Group className="mb-3" id="formGridCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-
-                <Button variant="primary" type="submit">
+                <Button variant="dark" type="submit">
                     Proceed Checkout
                 </Button>
             </Form>
