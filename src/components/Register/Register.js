@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../Loading/Loading';
+import toast from 'react-hot-toast';
 
 const Register = () => {
 
@@ -33,6 +34,7 @@ const Register = () => {
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
         navigate(from, { replace: true });
+        toast.success('Login successful!!!')
     }
 
     if (registerLoading || updating) {

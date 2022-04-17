@@ -52,7 +52,7 @@ const Login = () => {
         toast.success("Successfully logged in");
     }
 
-    if (loading || sending) {
+    if (loading) {
         return <Loading></Loading>;
     }
 

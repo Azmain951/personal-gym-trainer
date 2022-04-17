@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import google from '../../images/google.png'
 import github from '../../images/github.png'
+import toast from 'react-hot-toast';
 
 
 const SocialLogin = () => {
@@ -18,6 +19,7 @@ const SocialLogin = () => {
 
     if (googleUser || githubUser) {
         navigate(from, { replace: true });
+        toast.success('Login successful!!!');
     }
 
     if (googleError || githubError) {
