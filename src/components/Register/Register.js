@@ -2,8 +2,9 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init'
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useUpdateProfile } from 'react-firebase-hooks/auth';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../Loading/Loading';
 
 const Register = () => {
 
@@ -17,12 +18,11 @@ const Register = () => {
         user,
         registerLoading,
         registerError,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    const handleRegister = async e => {
-
+    const handleRegister = async (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
@@ -31,6 +31,10 @@ const Register = () => {
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
         navigate(from, { replace: true });
+    }
+
+    if (registerLoading || updating) {
+        return <Loading></Loading>;
     }
 
     return (
@@ -54,9 +58,7 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Register
-                </Button>
+                <input className='btn btn-primary border-0' type="submit" value="Register" />
             </Form>
             <p className='mt-2 w-75 mx-auto'>Already have an account? <Link to='/login'>Please Login</Link></p>
             <SocialLogin></SocialLogin>
