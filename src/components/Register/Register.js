@@ -34,7 +34,7 @@ const Register = () => {
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
         navigate(from, { replace: true });
-        toast.success('Login successful!!!')
+        toast.success('User registered successfully!!!')
     }
 
     if (registerLoading || updating) {
