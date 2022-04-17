@@ -9,10 +9,14 @@ import NotFound from './components/NotFound/NotFound';
 import Blogs from './components/Blogs/Blogs';
 import Register from './components/Register/Register';
 import RequireAuth from './components/RequireAuth/RequireAuth';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <div className='position-relative'>
+      <div>
+        <Toaster />
+      </div>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>

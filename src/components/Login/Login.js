@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import toast, { Toaster } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
@@ -12,6 +13,7 @@ const Login = () => {
     const passwordRef = useRef('');
     const navigate = useNavigate();
     const location = useLocation();
+    let errorMessage;
 
     const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
 
@@ -41,14 +43,22 @@ const Login = () => {
 
     if (user) {
         navigate(from, { replace: true });
+        toast.success("Successfully logged in")
     }
 
     if (loading || sending) {
         return <Loading></Loading>;
     }
 
+    if (error || resetError) {
+        errorMessage = <p className='text-danger'>Error: {error?.message || resetError?.message} </p>
+    }
+
     return (
         <div className='container w-50 border mt-5 rounded pb-3'>
+            <div>
+                <Toaster />
+            </div>
             <h2 className='text-center mt-4'>Login</h2>
             <Form onSubmit={handleLogin} className='w-75 mx-auto'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -60,6 +70,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" name='password' placeholder="Password" required />
                 </Form.Group>
+                {errorMessage}
                 <Button variant="primary" type="submit">
                     Login
                 </Button>

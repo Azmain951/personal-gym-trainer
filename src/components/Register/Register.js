@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -10,6 +10,8 @@ const Register = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+    const [agreed, setAgreed] = useState(false);
+    let errorMessage;
 
     let from = location.state?.from?.pathname || "/";
 
@@ -37,6 +39,10 @@ const Register = () => {
         return <Loading></Loading>;
     }
 
+    if (registerError || updateError) {
+        errorMessage = <p className='text-danger'>Error: {registerError?.message || updateError?.message} </p>
+    }
+
     return (
         <div className='container w-50 border mt-5 rounded pb-3'>
             <h2 className='text-center mt-4'>Register</h2>
@@ -56,9 +62,10 @@ const Register = () => {
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Check onClick={() => setAgreed(!agreed)} className={`${agreed ? 'text-success' : 'text-danger'}`} type="checkbox" label="Accept Personal Gym Trainer Terms and Conditions" />
                 </Form.Group>
-                <input className='btn btn-primary border-0' type="submit" value="Register" />
+                {errorMessage}
+                <input className='btn btn-primary border-0' type="submit" value="Register" disabled={!agreed} />
             </Form>
             <p className='mt-2 w-75 mx-auto'>Already have an account? <Link to='/login'>Please Login</Link></p>
             <SocialLogin></SocialLogin>
