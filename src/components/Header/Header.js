@@ -19,7 +19,7 @@ const Header = () => {
     }
     return (
         <Navbar className='sticky-top' bg="dark" variant="dark" expand="lg">
-            <Container fluid className='px-5 py-1'>
+            <Container fluid className='px-4 py-1'>
                 <Navbar.Brand as={Link} className='d-flex' to="/"><img src={logo} alt="" height={32} /><h4 className='text-white ms-2'>Personal <span className='fst-italic text-primary'>Gym Trainer</span></h4></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
