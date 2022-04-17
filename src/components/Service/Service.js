@@ -1,9 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Service = ({ service }) => {
 
-    const { name, img, description, perks, pricing } = service;
+    const { id, name, img, description, perks, pricing } = service;
+    const navigate = useNavigate();
+
+    const handleEnroll = (e) => {
+        e.preventDefault();
+        navigate('/checkout')
+    }
 
     return (
         <div className='col'>
@@ -21,8 +27,8 @@ const Service = ({ service }) => {
                         }
                     </ul>
                 </div>
-                <div class="card-footer p-0">
-                    <button className='btn btn-secondary w-100'>Enroll Now</button>
+                <div className="card-footer p-0">
+                    <button onClick={handleEnroll} className='btn btn-secondary w-100'>Enroll Now</button>
                 </div>
             </div>
         </div>
