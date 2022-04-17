@@ -10,7 +10,7 @@ import auth from '../../firebase.init';
 import './Header.css'
 
 const Header = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     const handleSignOut = async (e) => {
         e.preventDefault();
