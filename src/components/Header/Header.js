@@ -4,6 +4,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import logo from '../../images/logo.png'
 
 import auth from '../../firebase.init';
 import './Header.css'
@@ -17,23 +18,9 @@ const Header = () => {
         toast.success('Sign Out Successfully');
     }
     return (
-        // <nav className='sticky-top navbar d-flex justify-content-between align-items-center bg-dark text-white px-5 py-3'>
-        //     <Link to='/home'><h4 className='text-white'>Personal <span className='fst-italic text-primary'>Gym Trainer</span></h4></Link>
-
-        //     <div className="nav-items">
-        //         <Link to='checkout'>Checkout</Link>
-        //         <Link to='Blogs'>Blogs</Link>
-        //         <Link to='About'>About</Link>
-        //         {user ?
-        //             <button onClick={handleSignOut} className='sign-out bg-dark'>Sign Out</button>
-        //             : <Link to='login'>Login</Link>}
-        //     </div>
-        // </nav >
-
-
         <Navbar className='sticky-top' bg="dark" variant="dark" expand="lg">
             <Container fluid className='px-5 py-1'>
-                <Navbar.Brand as={Link} to="/"><h4 className='text-white'>Personal <span className='fst-italic text-primary'>Gym Trainer</span></h4></Navbar.Brand>
+                <Navbar.Brand as={Link} className='d-flex' to="/"><img src={logo} alt="" height={32} /><h4 className='text-white ms-2'>Personal <span className='fst-italic text-primary'>Gym Trainer</span></h4></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="nav-items ms-auto">
