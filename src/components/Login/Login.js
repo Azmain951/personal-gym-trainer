@@ -19,7 +19,13 @@ const Login = () => {
 
     const resetPassword = async () => {
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast.success('Reset Password Email Sent')
+        }
+        else {
+            toast.error('Please enter an email!!!')
+        }
 
     }
 
