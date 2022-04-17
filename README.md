@@ -1,7 +1,7 @@
 # Personal Gym Trainer
 
-## Live Site: [Personal Gym Trainer](https://github.com/facebook/create-react-app)
-https://github.com/facebook/create-react-app
+## Live Site: [Personal Gym Trainer](https://personal-gym-trainer.web.app/)
+https://personal-gym-trainer.web.app/
 
 ## Website Features and Functionalities
 
