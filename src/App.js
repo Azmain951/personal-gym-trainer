@@ -14,7 +14,7 @@ import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <div className='position-relative'>
+    <div>
       <div>
         <Toaster />
       </div>

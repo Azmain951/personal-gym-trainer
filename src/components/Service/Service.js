@@ -22,7 +22,7 @@ const Service = ({ service }) => {
                     <h4 className="card-title text-capitalize">{name}</h4>
                     <hr />
                     <h3>From<span className='text-primary'> ${pricing}</span>/Month</h3>
-                    <p className="card-text">{description.slice(0, 200)}</p>
+                    <p className="card-text">{description}</p>
                     <hr />
                     <div className='text-start'>
                         {
