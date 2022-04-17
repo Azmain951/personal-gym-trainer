@@ -16,7 +16,7 @@ const Service = ({ service }) => {
 
     return (
         <div className='col'>
-            <div className="card h-100 text-center">
+            <div className="card h-100 text-center border-0 shadow">
                 <img src={img} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h4 className="card-title text-capitalize">{name}</h4>
@@ -30,8 +30,8 @@ const Service = ({ service }) => {
                         }
                     </div>
                 </div>
-                <div className="card-footer p-0">
-                    <button onClick={handleEnroll} className='enroll btn btn-dark w-100'>Enroll Now</button>
+                <div className="card-footer p-0 border-0 ">
+                    <button onClick={handleEnroll} className='enroll btn btn-dark w-100 rounded-0 rounded-bottom'>Enroll Now</button>
                 </div>
             </div>
         </div>

@@ -1,9 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import Loading from '../Loading/Loading';
+import google from '../../images/google.png'
+import github from '../../images/github.png'
+
 
 const SocialLogin = () => {
 
@@ -33,8 +34,8 @@ const SocialLogin = () => {
             {errorMessage}
 
             <div className='w-75 mx-auto mb-3 d-flex justify-content-center gap-4'>
-                <button onClick={() => signInWithGoogle()} className='w-75 btn btn-dark'>Google Sign in</button>
-                <button className='w-75 btn btn-dark'>Github Sign in</button>
+                <button onClick={() => signInWithGoogle()} className='w-75 btn btn-dark'><img className='me-1' src={google} height={28} alt="" /> Google Sign in</button>
+                <button className='w-75 btn btn-dark'><img className='me-1' src={github} alt="" height={28} /> Github Sign in</button>
             </div>
         </div >
     );

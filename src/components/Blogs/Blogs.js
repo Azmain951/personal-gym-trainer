@@ -3,7 +3,7 @@ import React from 'react';
 const Blogs = () => {
     return (
         <div className='w-75 mx-auto my-5 px-5 py-4 border rounded-3'>
-            <h2 className='text-center mb-4'>Questions and Answers</h2>
+            <h2 className='text-center mb-5'>Questions and Answers</h2>
             <div>
                 <h5>1. Difference between authorization and authentication</h5>
                 <ul>
